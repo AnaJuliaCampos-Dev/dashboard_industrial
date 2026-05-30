@@ -1,0 +1,243 @@
+/* ==========================================================================
+   RESET E CONFIGURAÇÕES GLOBAIS (Tema Solo Leveling - Roxo Neon)
+   ========================================================================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #100a1c; 
+    color: #e2dbec;
+    font-family: 'Courier New', Courier, monospace; 
+    height: 100vh;
+    display: flex;
+    overflow: hidden;
+}
+
+.scada-container {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* ==========================================================================
+   COLUNA ESQUERDA: Painel de Acesso
+   ========================================================================== */
+#login-section {
+    width: 35%;
+    background: linear-gradient(135deg, #160f24 0%, #0d0816 100%);
+    border-right: 2px solid #26193c;
+    padding: 60px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#login-section h1 {
+    color: #bc13fe; 
+    font-size: 2rem;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px rgba(188, 19, 254, 0.5);
+}
+
+#login-section h2 {
+    color: #a394be;
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+    font-weight: normal;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+input[type="text"] {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #3d295f;
+    padding: 12px 4px;
+    color: #fff;
+    font-family: inherit;
+    font-size: 1.1rem;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus {
+    border-bottom-color: #bc13fe;
+}
+
+input[type="text"]::placeholder {
+    color: #5d4e75;
+}
+
+button {
+    background: #1a0b36;
+    color: #bc13fe;
+    border: 2px solid #bc13fe;
+    padding: 14px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    font-family: inherit;
+    border-radius: 8px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 15px rgba(188, 19, 254, 0.1);
+    margin-top: 20px;
+}
+
+button:hover:not(:disabled) {
+    background: #bc13fe;
+    color: #100a1c;
+    box-shadow: 0 0 20px rgba(188, 19, 254, 0.6);
+}
+
+button:disabled {
+    border-color: #3d295f;
+    color: #5d4e75;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+/* Estilo do Botão de Emergência (Desafio Extra) */
+#btn-emergencia {
+    background: #2a0813;
+    color: #ff0055;
+    border-color: #ff0055;
+    box-shadow: 0 0 15px rgba(255, 0, 85, 0.2);
+}
+
+#btn-emergencia:hover:not(:disabled) {
+    background: #ff0055;
+    color: #100a1c;
+    box-shadow: 0 0 25px rgba(255, 0, 85, 0.8);
+}
+
+.erro-texto {
+    color: #ff4d6d;
+    font-size: 0.85rem;
+    margin-top: 15px;
+    line-height: 1.4;
+}
+
+/* ==========================================================================
+   COLUNA DIREITA: Painel de Monitoramento
+   ========================================================================== */
+#painel-principal {
+    width: 65%;
+    padding: 40px;
+    background-color: #100a1c;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.grid-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.card {
+    background-color: #1a1128;
+    border: 1px solid #26193c;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card h2 {
+    color: #a394be;
+    font-size: 1rem;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+    letter-spacing: 1px;
+    border-left: 3px solid #bc13fe;
+    padding-left: 10px;
+}
+
+label {
+    font-size: 0.85rem;
+    color: #5d4e75;
+    margin-bottom: 8px;
+    display: block;
+}
+
+select {
+    background-color: #0d0816;
+    color: #e2dbec;
+    border: 1px solid #26193c;
+    padding: 12px;
+    font-family: inherit;
+    width: 100%;
+    border-radius: 8px;
+    outline: none;
+    cursor: pointer;
+}
+
+select:focus {
+    border-color: #bc13fe;
+}
+
+#status-container {
+    margin-top: 30px;
+    padding: 15px;
+    background-color: #0d0816;
+    border-radius: 8px;
+    border-left: 3px solid #3d295f;
+}
+
+#status-texto {
+    color: #fff;
+    font-weight: bold;
+}
+
+#sensor-visor {
+    font-size: 3.5rem;
+    font-weight: bold;
+    text-align: center;
+    padding: 30px 10px;
+    background-color: #0d0816;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    box-shadow: inset 0 0 20px rgba(0,0,0,0.6);
+}
+
+#sensor-status {
+    text-align: center;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+/* ==========================================================================
+   CLASSES DINÂMICAS DE ALERTAS
+   ========================================================================== */
+.normal {
+    color: #00ffcc !important;
+    text-shadow: 0 0 15px rgba(0, 255, 204, 0.4);
+}
+
+.alerta {
+    color: #ff9e00 !important;
+    text-shadow: 0 0 15px rgba(255, 158, 0, 0.4);
+}
+
+.perigo {
+    color: #ff0055 !important;
+    font-weight: bold;
+    text-shadow: 0 0 20px rgba(255, 0, 85, 0.6);
+}
